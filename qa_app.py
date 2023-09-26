@@ -15,8 +15,7 @@ from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.callbacks.base import CallbackManager
 from langchain.embeddings import HuggingFaceEmbeddings
 
-
-st.set_page_config(page_title="Quran Gpt",page_icon=':shark:')
+st.set_page_config(page_title="Quran GPT", page_icon="📖")
 
 @st.cache_data
 def load_docs(files):
