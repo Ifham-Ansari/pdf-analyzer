@@ -4,7 +4,7 @@ import random
 import itertools
 import streamlit as st
 
-import tkinter as tk
+# import tkinter as tk
 
 from io import StringIO
 from langchain.vectorstores import FAISS
