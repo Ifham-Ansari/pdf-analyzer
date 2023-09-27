@@ -187,9 +187,6 @@ def main():
     splitter_type = "RecursiveCharacterTextSplitter"
 
     
-    button = tk.Button(window, text="Click Me", command=button_click)
-
-
 # Function to handle the "New Chat" button click
 # def start_new_chat():
 #     # Add your code to start a new chat here
