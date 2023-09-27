@@ -3,6 +3,9 @@ import PyPDF2
 import random
 import itertools
 import streamlit as st
+
+import tkinter as tk
+
 from io import StringIO
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
@@ -14,6 +17,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.callbacks.base import CallbackManager
 from langchain.embeddings import HuggingFaceEmbeddings
+
 
 st.set_page_config(page_title="Quran GPT", page_icon="📖")
 
@@ -181,6 +185,25 @@ def main():
 
     # Use RecursiveCharacterTextSplitter as the default and only text splitter
     splitter_type = "RecursiveCharacterTextSplitter"
+
+    
+
+# Function to handle the "New Chat" button click
+def start_new_chat():
+    # Add your code to start a new chat here
+    print("New Chat started")
+
+# Create the main application window
+root = tk.Tk()
+root.title("Chat App")
+
+# Create a button widget for "New Chat"
+new_chat_button = tk.Button(root, text="New Chat", command=start_new_chat)
+new_chat_button.pack()
+
+# Start the GUI event loop
+root.mainloop()
+
 
     if 'openai_api_key' not in st.session_state:
         openai_api_key = st.text_input(
