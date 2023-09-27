@@ -187,25 +187,6 @@ def main():
     splitter_type = "RecursiveCharacterTextSplitter"
 
 
-button = tk.Button(root, text="Click Me!")
-button.pack(pady=10)
-
-    
-# Function to handle the "New Chat" button click
-# def start_new_chat():
-#     # Add your code to start a new chat here
-#     print("New Chat started")
-
-# # Create the main application window
-# root = tk.Tk()
-# root.title("Chat App")
-
-# # Create a button widget for "New Chat"
-# new_chat_button = tk.Button(root, text="New Chat", command=start_new_chat)
-# new_chat_button.pack()
-
-# # Start the GUI event loop
-# root.mainloop()
 
 
     if 'openai_api_key' not in st.session_state:
