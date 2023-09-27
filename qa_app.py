@@ -74,12 +74,12 @@ def split_texts(text, chunk_size, overlap, split_method):
 
     return splits
 
-# @st.cache_data
+@st.cache_data
 def generate_eval(text, N, chunk):
 
-    Generate N questions from context of chunk chars
-    IN: text, N questions, chunk size to draw question from in the doc
-    OUT: eval set as JSON list
+    # Generate N questions from context of chunk chars
+    # IN: text, N questions, chunk size to draw question from in the doc
+    # OUT: eval set as JSON list
 
     st.info("`Generating sample questions ...`")
     n = len(text)
