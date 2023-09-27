@@ -75,27 +75,27 @@ def split_texts(text, chunk_size, overlap, split_method):
     return splits
 
 # @st.cache_data
-# def generate_eval(text, N, chunk):
+def generate_eval(text, N, chunk):
 
-    # Generate N questions from context of chunk chars
-    # IN: text, N questions, chunk size to draw question from in the doc
-    # OUT: eval set as JSON list
+    Generate N questions from context of chunk chars
+    IN: text, N questions, chunk size to draw question from in the doc
+    OUT: eval set as JSON list
 
-    # st.info("`Generating sample questions ...`")
-    # n = len(text)
-    # starting_indices = [random.randint(0, n-chunk) for _ in range(N)]
-    # sub_sequences = [text[i:i+chunk] for i in starting_indices]
-    # chain = QAGenerationChain.from_llm(ChatOpenAI(temperature=0))
-    # eval_set = []
-    # for i, b in enumerate(sub_sequences):
-    #     try:
-    #         qa = chain.run(b)
-    #         eval_set.append(qa)
-    #         st.write("Creating Question:",i+1)
-    #     except:
-    #         st.warning('Error generating question %s.' % str(i+1), icon="⚠️")
-    # eval_set_full = list(itertools.chain.from_iterable(eval_set))
-    # return eval_set_full
+    st.info("`Generating sample questions ...`")
+    n = len(text)
+    starting_indices = [random.randint(0, n-chunk) for _ in range(N)]
+    sub_sequences = [text[i:i+chunk] for i in starting_indices]
+    chain = QAGenerationChain.from_llm(ChatOpenAI(temperature=0))
+    eval_set = []
+    for i, b in enumerate(sub_sequences):
+        try:
+            qa = chain.run(b)
+            eval_set.append(qa)
+            st.write("Creating Question:",i+1)
+        except:
+            st.warning('Error generating question %s.' % str(i+1), icon="⚠️")
+    eval_set_full = list(itertools.chain.from_iterable(eval_set))
+    return eval_set_full
 
 
 # ...
