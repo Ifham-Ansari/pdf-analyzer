@@ -237,29 +237,6 @@ def main():
             streaming=True, callback_manager=callback_manager, verbose=True, temperature=0)
         qa = RetrievalQA.from_chain_type(llm=chat_openai, retriever=retriever, chain_type="stuff", verbose=True)
 
-        # Check if there are no generated question-answer pairs in the session state
-        # if 'eval_set' not in st.session_state:
-        #     # Use the generate_eval function to generate question-answer pairs
-        #     num_eval_questions = 10  # Number of question-answer pairs to generate
-        #     st.session_state.eval_set = generate_eval(
-        #         loaded_text, num_eval_questions, 3000)
-
-       # Display the question-answer pairs in the sidebar with smaller text
-        # for i, qa_pair in enumerate(st.session_state.eval_set):
-        #     st.sidebar.markdown(
-        #         f"""
-        #         <div class="css-card">
-        #         <span class="card-tag">Question {i + 1}</span>
-        #             <p style="font-size: 12px;">{qa_pair['question']}</p>
-        #             <p style="font-size: 12px;">{qa_pair['answer']}</p>
-        #         </div>
-        #         """,
-        #         unsafe_allow_html=True,
-        #     )
-        #     # <h4 style="font-size: 14px;">Question {i + 1}:</h4>
-        #     # <h4 style="font-size: 14px;">Answer {i + 1}:</h4>
-        # st.write("Ready to answer questions.")
-
         # Question and answering
         user_question = st.text_input("Enter your question:")
         if user_question:
