@@ -1,38 +1,98 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-    	<title>Quran GPT</title>
-    	<style type="text/css">
-    		html {
-    			overflow: auto;
-    		}  		
-    		html,
-    		body,
-    		div,
-    		iframe {
-    			margin: 0px;
-    			padding: 0px;
-    			height: 100%;
-    			border: none;
-    		}	
-    		iframe {
-    			display: block;
-    			width: 100%;
-    			border: none;
-    			overflow-y: auto;
-    			overflow-x: hidden;
-    		}
-    	</style>
+<html>
+<head>
+    <title>Chat App</title>
+    <style>
+		/* Define your CSS styles here */
+.chat-container {
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.chat-messages {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#send-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+	</style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            Chat with AI
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script >
+		document.addEventListener("DOMContentLoaded", function () {
+    const chatMessages = document.getElementById("chat-messages");
+    const userInput = document.getElementById("user-input");
+    const sendButton = document.getElementById("send-button");
+
+    sendButton.addEventListener("click", function () {
+        const userMessage = userInput.value;
+        displayUserMessage(userMessage);
+        // Send userMessage to your chatbot or AI service here and receive a response.
+        // Display the response using displayBotMessage(response);
+        userInput.value = ""; // Clear the input field
+    });
+
+    function displayUserMessage(message) {
+        const userDiv = document.createElement("div");
+        userDiv.className = "user-message";
+        userDiv.textContent = message;
+        chatMessages.appendChild(userDiv);
+    }
+
+    function displayBotMessage(message) {
+        const botDiv = document.createElement("div");
+        botDiv.className = "bot-message";
+        botDiv.textContent = message;
+        chatMessages.appendChild(botDiv);
+    }
+});
+
 		
-    </head>
-    <body>
-<!--     	<iframe src="https://starmorph-pdfchat.streamlit.app/"
-    			frameborder="0"
-    			marginheight="0"
-    			marginwidth="0"
-    			width="100%"
-    			height="100%"
-    			scrolling="auto">
-    </iframe> -->
-    </body>
-    </html>
+	</script>
+</body>
+</html>
