@@ -179,13 +179,13 @@ def main():
     
     st.sidebar.title("Menu")
     
-    embedding_option = st.sidebar.radio(
-        "Choose Embeddings", ["OpenAI Embeddings"])
-    retriever_type = st.sidebar.selectbox(
-        "Choose Retriever", ["SIMILARITY SEARCH", "SUPPORT VECTOR MACHINES"])
+    # embedding_option = st.sidebar.radio(
+    #     "Choose Embeddings", ["OpenAI Embeddings"])
+    # retriever_type = st.sidebar.selectbox(
+    #     "Choose Retriever", ["SIMILARITY SEARCH", "SUPPORT VECTOR MACHINES"])
 
-    # Use RecursiveCharacterTextSplitter as the default and only text splitter
-    splitter_type = "RecursiveCharacterTextSplitter"
+    # # Use RecursiveCharacterTextSplitter as the default and only text splitter
+    # splitter_type = "RecursiveCharacterTextSplitter"
 
     if 'openai_api_key' not in st.session_state:
         openai_api_key = st.text_input(
