@@ -158,11 +158,6 @@ def main():
             div.css-1kyxreq {margin-top: -40px;
             }
             
-           
-       
-            
-          
-
         </style>
         """,
         unsafe_allow_html=True,
@@ -180,7 +175,7 @@ def main():
     st.sidebar.title("Menu")
     
     embedding_option = st.sidebar.radio(
-        "Choose Embeddings", ["OpenAI Embeddings"])
+        # "Choose Embeddings", ["OpenAI Embeddings"])
     retriever_type = st.sidebar.selectbox(
         "Choose Retriever", ["SIMILARITY SEARCH", "SUPPORT VECTOR MACHINES"])
 
